@@ -1,50 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AI Homework Helper</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>🤖 AI Homework Helper</h1>
+    <div class="container">
 
-    <p>Welcome! Get help with your homework.</p>
+        <header>
+            <div class="logo">🤖</div>
 
-    <textarea
-        id="question"
-        placeholder="Type your homework question here..."
-        rows="6"
-        cols="50">
-    </textarea>
+            <h1>AI Homework Helper</h1>
 
-    <br><br>
+            <p>
+                Get help with your homework using AI.
+            </p>
+        </header>
 
-    <button onclick="solveHomework()">
-        Solve Homework
-    </button>
+        <main>
 
-    <h2>Answer</h2>
+            <label for="subject">Choose Subject</label>
 
-    <p id="answer">
-        Your answer will appear here.
-    </p>
+            <select id="subject">
+                <option value="General">General</option>
+                <option value="Math">Math</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
+                <option value="History">History</option>
+                <option value="Computer">Computer</option>
+            </select>
+
+
+            <label for="question">Your Homework Question</label>
+
+            <textarea
+                id="question"
+                placeholder="Type your homework question here..."
+            ></textarea>
+
+
+            <button onclick="solveHomework()">
+                🤖 Solve Homework
+            </button>
+
+
+            <section class="answer-box">
+
+                <h2>💡 Answer</h2>
+
+                <p id="answer">
+                    Your answer will appear here.
+                </p>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Made with ❤️ for students</p>
+        </footer>
+
+    </div>
+
 
     <script>
+
         function solveHomework() {
 
-            let question =
+            const question =
                 document.getElementById("question").value;
 
-            if (question === "") {
-                document.getElementById("answer").innerText =
-                    "Please enter a question.";
+            const subject =
+                document.getElementById("subject").value;
+
+            const answer =
+                document.getElementById("answer");
+
+
+            if (question.trim() === "") {
+
+                answer.innerHTML =
+                    "⚠️ Please enter your homework question.";
+
                 return;
             }
 
-            document.getElementById("answer").innerText =
-                "🤖 AI is thinking...";
+
+            answer.innerHTML =
+                "⏳ Your " + subject +
+                " homework question is ready to solve!";
+
+
+            // Real AI will be connected here later.
         }
+
     </script>
 
 </body>
