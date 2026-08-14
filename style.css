@@ -6,56 +6,83 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #667eea, #764ba2);
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 30px;
 }
 
 .container {
-    background: white;
-    width: 100%;
-    max-width: 700px;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: auto;
+}
+
+header {
     text-align: center;
+    color: white;
+    margin-bottom: 30px;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 10px;
+.logo {
+    font-size: 55px;
 }
 
-.subtitle {
-    color: #666;
-    margin-bottom: 25px;
+header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    margin-top: 18px;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+select {
+    background: white;
 }
 
 textarea {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-    font-size: 16px;
+    min-height: 180px;
     resize: vertical;
-    outline: none;
 }
 
+select:focus,
 textarea:focus {
+    outline: none;
     border-color: #667eea;
 }
 
 button {
-    margin-top: 15px;
-    padding: 14px 30px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     background: #667eea;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -66,17 +93,37 @@ button:hover {
 .answer-box {
     margin-top: 25px;
     padding: 20px;
-    background: #f5f6ff;
+    background: #f5f7ff;
     border-radius: 12px;
-    text-align: left;
+    border-left: 5px solid #667eea;
 }
 
 .answer-box h2 {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.answer-box p {
+    line-height: 1.6;
     color: #333;
 }
 
-#answer {
-    color: #555;
-    line-height: 1.6;
-}S
+footer {
+    text-align: center;
+    color: white;
+    margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
