@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Homework Helper</title>
+</head>
+
+<body>
+
+    <h1>🤖 AI Homework Helper</h1>
+
+    <p>Welcome! Get help with your homework.</p>
+
+    <textarea
+        id="question"
+        placeholder="Type your homework question here..."
+        rows="6"
+        cols="50">
+    </textarea>
+
+    <br><br>
+
+    <button onclick="solveHomework()">
+        Solve Homework
+    </button>
+
+    <h2>Answer</h2>
+
+    <p id="answer">
+        Your answer will appear here.
+    </p>
+
+    <script>
+        function solveHomework() {
+
+            let question =
+                document.getElementById("question").value;
+
+            if (question === "") {
+                document.getElementById("answer").innerText =
+                    "Please enter a question.";
+                return;
+            }
+
+            document.getElementById("answer").innerText =
+                "🤖 AI is thinking...";
+        }
+    </script>
+
+</body>
+</html>
